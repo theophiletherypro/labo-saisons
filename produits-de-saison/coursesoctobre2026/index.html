@@ -3,18 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fruits & Légumes de Saison Octobre 2026 : Liste PDF à imprimer</title>
+    <title>Fruits &amp; Légumes de Saison Octobre 2026 : Liste PDF à imprimer</title>
+    <meta name="description" content="Découvrez les légumes et fruits locaux d'octobre 2026. Téléchargez votre liste de courses gratuite en PDF (1 page) et 3 recettes d'automne simples.">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
-        header { border-bottom: 2px solid #e2e8f0; padding-bottom: 20px; margin-bottom: 30px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; background-color: #f7fafc; }
+        header { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; text-align: center; }
+        h1 { color: #2c5282; margin: 0 0 10px 0; font-size: 2rem; }
+        .intro { font-size: 1.1rem; color: #4a5568; }
+        .interactive-box { background: #ebf8ff; border: 2px solid #bee3f8; padding: 25px; border-radius: 12px; margin-bottom: 30px; }
+        .quiz-title { font-weight: bold; margin-bottom: 15px; color: #2b6cb0; font-size: 1.2rem; }
+        .btn-group { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+        button { background: white; border: 1px solid #cbd5e0; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 1rem; transition: all 0.2s; }
+        button:hover { background: #e2e8f0; border-color: #a0aec0; }
+        button.active { background: #3182ce; color: white; border-color: #2b6cb0; }
+        .result-zone { background: white; padding: 20px; border-radius: 8px; border: 1px dashed #90cdf4; display: none; margin-bottom: 15px; }
+        .download-btn { display: inline-block; background: #38a169; color: white; text-decoration: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; margin-top: 10px; }
+        .download-btn:hover { background: #2f855a; }
+        .content-section { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 30px; }
+        .story { font-style: italic; background: #f7fafc; padding: 20px; border-left: 4px solid #cbd5e0; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+        .category { background: #fffaf0; border: 1px solid #feebc8; padding: 20px; border-radius: 8px; }
+        .category h3 { margin-top: 0; color: #dd6b20; border-bottom: 2px solid #fbd38d; padding-bottom: 5px; }
+        ul { padding-left: 20px; margin-bottom: 0; }
+        li { margin-bottom: 8px; }
+        .recettes { background: #f0fff4; border: 1px solid #c6f6d5; padding: 25px; border-radius: 12px; margin-bottom: 30px; }
+        .recettes h2 { color: #22543d; margin-top: 0; }
+        .recette-item { margin-bottom: 20px; }
+        .recette-item h3 { color: #2f855a; margin-bottom: 5px; }
+        .badge { display: inline-block; background: #feebc8; color: #9c4221; font-size: 0.8rem; padding: 2px 8px; border-radius: 4px; font-weight: bold; margin-left: 5px; }
+        .author-box { background: #edf2f7; padding: 20px; border-radius: 12px; font-size: 0.95rem; margin-top: 40px; }
+        .captation-zone { background: #fff5f5; border: 1px solid #fed7d7; padding: 20px; border-radius: 8px; margin-top: 15px; text-align: center; }
+        .captation-zone input { padding: 10px; border: 1px solid #cbd5e0; border-radius: 6px; width: 60%; max-width: 300px; margin-right: 10px; font-size: 1rem; }
+        .captation-zone button { background: #e53e3e; color: white; border: none; }
+        .captation-zone button:hover { background: #c53030; }
     </style>
 </head>
 <body>
+
 <header>
-    <h1>Fruits et légumes de saison en octobre 2026</h1>
+    <h1>Courses de Saison France – Produits de Saison</h1>
+    <p class="intro">Manger sainement tout en respectant le rythme de la nature demande parfois un peu d'organisation. En ce mois d'octobre 2026, la transition vers l'automne est solidement installée.</p>
 </header>
+
 <main>
-    <p>Structure HTML de base pour votre page de saison.</p>
+    <!-- MODULE INTERACTIF -->
+    <section class="interactive-box">
+        <div class="quiz-title">🎯 Quel est ton objectif principal ce mois-ci ?</div>
+        <div class="btn-group">
+            <button id="btn-cuisine" onclick="choisirOption('cuisine')">🍁 Cuisiner Local &amp; Terroir</button>
+            <button id="btn-budget" onclick="choisirOption('budget')">💸 Manger Saison à Petit Budget</button>
+            <button id="btn-potager" onclick="choisirOption('potager')">🌱 Mon Potager de Balcon</button>
+        </div>
+
+        <!-- ZONE DYNAMIQUE DE RESULTAT -->
+        <div id="result-box" class="result-zone">
+            <div id="result-text"></div>
+            <div style="text-align: center;">
+                <a href="#" class="download-btn" onclick="alert('Téléchargement direct de votre fiche PDF 1 page !'); return false;">
+                    📥 Télécharger ma fiche d'Octobre (PDF gratuit)
+                </a>
+            </div>
+            
+            <!-- ZONE DE CAPTATION -->
+            <div class="captation-zone">
+                <p><strong>Ne manque pas le changement de saison !</strong></p>
+                <p>Laisse ton email pour recevoir la liste de Novembre 2026 automatiquement 3 jours avant tout le monde :</p>
+                <input type="email" placeholder="Ton adresse email..." required>
+                <button type="submit" onclick="alert('Inscription validée !');">M'inscrire</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEXTE ET LISTE DE COURSES -->
+    <section class="content-section">
+        <h2>Fruits et légumes de saison en octobre 2026 : votre liste de courses locale</h2>
+        <p>Retrouvez notre sélection du potager et des vergers pour vos menus d'octobre.</p>
+
+        <div class="story">
+            <strong>L'expérience du terroir</strong><br>
+            Souvenirs d'enfance dans le Périgord à ramasser les châtaignes : les produits locaux de saison offrent un goût incomparable.
+        </div>
+
+        <div class="grid">
+            <div class="category">
+                <h3>1. Les légumes terreux</h3>
+                <ul>
+                    <li>Potimarron, courge butternut, panais, carottes sable, poireaux, champignons sauvages.</li>
+                </ul>
+            </div>
+            <div class="category">
+                <h3>2. Les fruits du verger</h3>
+                <ul>
+                    <li>Châtaignes fraîches, noix de Grenoble, pommes, poires Conférence, raisins Muscat.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- RECETTES ET FIN -->
+    <section class="recettes">
+        <h2>Inspirations en cuisine</h2>
+        <div class="recette-item">
+            <h3>La poêlée forestière du Périgord</h3>
+            <p>Champignons sauvages sautés au beurre, ail et persil, accompagnés de châtaignes cuites.</p>
+        </div>
+        <div class="recette-item">
+            <h3>Le velouté de potimarron au panais rôti</h3>
+            <p>Dés de courge et panais rôtis au four puis mixés avec un bouillon chaud.</p>
+        </div>
+    </section>
 </main>
+
+<script>
+function choisirOption(option) {
+    // Désactiver la classe active sur tous les boutons
+    document.getElementById('btn-cuisine').classList.remove('active');
+    document.getElementById('btn-budget').classList.remove('active');
+    document.getElementById('btn-potager').classList.remove('active');
+    
+    // Activer le bouton cliqué
+    document.getElementById('btn-' + option).classList.add('active');
+    
+    // Afficher la zone de résultat
+    document.getElementById('result-box').style.display = 'block';
+    
+    let text = "";
+    if(option === 'cuisine') text = "🍁 <strong>Option Terroir :</strong> Votre liste d'octobre personnalisée avec nos 3 fiches recettes phares est prête !";
+    if(option === 'budget') text = "💸 <strong>Option Petit Budget :</strong> Découvrez la liste optimisée au kilo avec nos astuces anti-inflation pour un panier à moins de 30€.";
+    if(option === 'potager') text = "🌱 <strong>Option Potager :</strong> Votre fiche conseil d'une page pour réussir vos semis d'automne (mâche, épinards) directement sur votre balcon.";
+    
+    document.getElementById('result-text').innerHTML = text;
+}
+</script>
 </body>
 </html>
